@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+<p><a href="spdweb_p3.html" style="color:blue">[&#8592; Arai plot statistics]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593;  SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_p5.html" style="color:blue">[pTRM check statistics &#8594;]</a></p>
+
+
+
+<h2>4 Directional statistics</h2>
+
+<p><strong>Statistic: $$Dec$$ and $$Inc$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The declination ($$Dec$$) and the inclination ($$Inc$$) of NRM direction of the paleointensity data over the same range of points used for the paleointensity estimates. 
+$$Dec$$ and $$Inc$$ are calculated using the principal component analysis (PCA) method of <a href="spdweb_refs.html#kirschvink80"><i>Kirschvink</i> (1980)</a> and may be 
+obtained from either a free-floating or anchored fit.</p>
+
+<p>The method of applying PCA to paleomagnetic data is as follows. Let $$X_{1,i}$$, $$X_{2,i}$$, and $$X_{3,i}$$ denote the $$x$$, $$y$$, and $$z$$ Cartesian coordinates of the 
+NRM vector of the selected points ($$i=start\ldots end$$). The center of mass of the data is given by the ordinates $$\bar{X_{1}}$$, $$\bar{X_{2}}$$, and $$\bar{X_{3}}$$.
+\[
+\bar{X_{1}}=\frac{\sum\limits_{i=start}^{end}{X_{1,i}}}{n};~~~\bar{X_{2}}=\frac{\sum\limits_{i=start}^{end}{X_{2,i}}}{n};~~~ \bar{X_{3}}=\frac{\sum\limits_{i=start}^{end}{X_{3,i}}}{n}
+\]
+</p>
+
+<p>The coordinates of the NRM vector are then transformed to be centered about $$\bar{X_{1}}$$, $$\bar{X_{2}}$$, and $$\bar{X_{3}}$$.
+\[
+X'_{1,i}=X_{1,i} - \bar{X_{1}};~~~X'_{2,i}=X_{2,i} - \bar{X_{2}};~~~ X'_{3,i}=X_{3,i} - \bar{X_{3}},
+\]
+where $$X'_{1,i}$$, $$X'_{2,i}$$, and $$X'_{3,i}$$ are the transformed coordinates.
+A fit anchored to the origin of the component diagram can be obtained by setting [$$\bar{X_{1}}$$, $$\bar{X_{2}}$$, $$\bar{X_{3}}$$] to [0, 0, 0].
+</p>
+
+<p>The orientation tensor, $$\mathbf{T}$$, of the transformed NRM data is defined as:
+\[
+\mathbf{T}=
+	\begin{pmatrix}
+		\sum{X'_{1,i}X'_{1,i}} & \sum{X'_{1,i}X'_{2,i}} & \sum{X'_{1,i}X'_{3,i}} \\
+		\sum{X'_{1,i}X'_{2,i}} & \sum{X'_{2,i}X'_{2,i}} & \sum{X'_{2,i}X'_{3,i}} \\
+		\sum{X'_{1,i}X'_{3,i}} & \sum{X'_{2,i}X'_{3,i}} & \sum{X'_{3,i}X'_{3,i}} \\
+	\end{pmatrix}.
+\]
+This orientation tensor is usually constructed within sample or geographic coordinates and consists of six independent elements. Typically, none of these elements zero. 
+When the non-diagonal elements of $$\mathbf{T}$$ are non-zero the vector components described by this coordinate system are not independent, they are correlated.
+There exists, however, a coordinate system in which the orientation tensor can be expressed in terms of three independent orthogonal components. The axes of this coordinates 
+system are known as the eigenvectors of the matrix and can be expressed in linear algebra form as:
+\[
+\mathbf{TV}=\tau\mathbf{V},
+\]
+where $$\mathbf{V}$$ is a matrix that contains the three eigenvectors (also know as principal axes) and $$\tau$$ is a diagonal matrix that contains the three eigenvalues.
+When ranked by $$\tau$$, such that $$\tau{_3} < \tau{_2} < \tau{_1}$$, the principal axis (i.e., $$\mathbf{V}_1=\left[V_{1,x}, V_{1,y}, V_{1,z}\right]$$) corresponds to 
+axis of the characteristic paleomagnetic direction.</p>
+
+<div align="center">
+<p class="note" align="left">
+<strong><i>Numerical Tip...</strong></i><br>
+PCA is a widely used technique and numerous programming languages have inbuilt PCA functions. In <font face="monospace">MATLAB</font>, for example, the command 
+<font face="monospace">[V, tau]=eig(T)</font> returns $$\mathbf{V}$$ and $$\tau$$. The equivalent in <font face="monospace">Python</font> is 
+<font face="monospace">tau,V=numpy.linalg.eig(T)</font>.
+</p>
+</div>
+
+<p>It should be noted, however, that paleomagnetic direction may be either parallel or anti-parallel to $$\mathbf{V}_1$$ and the sense of direction must be established. 
+To do this, we define a reference vector ($$\mathbf{R}$$) defined as the difference between the first and last NRM vector measurements:
+\[
+\mathbf{R}=\mathbf{X'}_{i=start}-\mathbf{X'}_{i=end}=\left[X'_{1,start}-X'_{1,end}, X'_{2,start}-X'_{2,end}, X'_{3,start}-X'_{3,end}\right].
+\]
+</p>
+
+<p>The vector dot product of $$\mathbf{V}_1$$ and $$\mathbf{R}$$ is then determined.
+\[
+dot=\mathbf{V}_1\cdot{}\mathbf{R} = V_{1,x}\times{}R_{x} + V_{1,y}\times{}R_{y} + V_{1,z}\times{}R_{z}
+\]
+</p>
+
+<p>The range of $$dot$$ is then truncated to exist only over [-1, 1].</p>
+
+<div align="center">
+<p  style="width:130px" align="left"><strong>if</strong> $$dot < -1$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$$dot=-1$$<br>
+<strong>else if</strong> $$dot > 1$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$$dot=1$$<br>
+<strong>end if</strong>
+</p>
+</div>
+
+
+<p>The principal paleomagnetic direction ($$\mathbf{PD}=\left[PD_x, PD_y, PD_z\right]$$ can be given a sense of direction along $$\mathbf{V}_1$$ as follows.</p>
+
+<div align="center">
+<p  style="width:160px" align="left"><strong>if</strong> $$\arccos{\left(dot\right)} > \frac{\pi}{2}$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$$\mathbf{PD}=-\mathbf{V}_1$$<br>
+<strong>else</strong> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;$$\mathbf{PD}=\mathbf{V}_1$$<br>
+<strong>end if</strong>
+</p>
+</div>
+
+
+<p>The declination ($$Dec$$) and inclination ($$Inc$$) of principal paleomagnetic direction can be calculated.
+
+<div align="center">
+<p  style="width:220px" align="left"><strong>if</strong> $$PD_x < 0$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$$Dec=\arctan{\left(\frac{PD_y}{PD_x}\right)} + 180^{\circ}$$<br>
+<strong>else if</strong> $$PD_x > 0$$ <strong>and</strong> $$PD_y \leq 0$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;$$Dec=\arctan{\left(\frac{PD_y}{PD_x}\right)} + 360^{\circ}$$<br>
+<strong>else</strong> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;$$Dec=\arctan{\left(\frac{PD_y}{PD_x}\right)}$$<br>
+<strong>end if</strong>
+</div>
+<<br>
+\[
+Inc=\arctan{\left(\frac{PD_z}{\sqrt{PD_x^2 + PD_y^2}}\right)}
+\]
+</p>
+
+<div align="center">
+<p class="note" align="left">
+<strong><i>Useful Note...</strong></i><br>
+The choice of free-floating or anchored fit should be stated by using subscripts on $$Dec$$ and $$Inc$$. That is, $$Dec_{Free}$$ and $$Inc_{Free}$$ for a free-floating fit 
+and $$Dec_{Anc.}$$ and $$Inc_{Anc.}$$ for an anchored fit.
+</p>
+</div>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$MAD_{Anc.}$$ and $$MAD_{Free}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>$$MAD_{Anc.}$$ and $$MAD_{Free}$$ are Maximum Angular Deviation (MAD) of the anchored and free-floating, respectively, directional fits to the paleomagnetic vector on 
+a vector component diagram (<a href="spdweb_refs.html#kirschvink80"><i>Kirschvink</i>, 1980</a>). Determined from the paleointensity demagnetization steps.</p>
+
+<p>$$MAD$$ is calculated as:
+\[
+MAD=\arctan{ \left( \sqrt{ \frac{ \tau{_{2}}+\tau{_{3}} }{\tau{_{1}}} }\right) },
+\]
+where $$\tau{_{3}} < \tau{_{2}} < \tau{_{1}}$$ are the eigenvalues of the PCA matrix.</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\alpha$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Angular difference between the anchored and free-floating best-fit directions on a vector component diagram.</p>
+
+
+<div align="center">
+<p class="note" align="left">
+<strong><i>Numerical Tip...</strong></i><br>
+Most directional parameters are related to the angle between two vectors. The angle between two vectors (denoted $$\mathbf{a}$$ and $$\mathbf{b}$$) can be calculated by 
+a simple rearrangement of the formulation for the dot product:
+	\[
+	\theta=\arccos\left( \frac{\mathbf{a}\cdot{}\mathbf{b}} {\left|\mathbf{a}\right|\left|\mathbf{b}\right|} \right).
+\]
+This approach, however, can be prone to numerical inaccuracies when $$\theta$$ is close to zero or $$\pi$$. For most practical purposes this should not be an issue, but 
+the following alternative formulation can be used to avoid these inaccuracies:
+\[
+	\theta=\arctan\left(  \frac{\left|\mathbf{a}\times\mathbf{b}\right|} {\mathbf{a}\cdot{}\mathbf{b}} \right),
+\]
+where $$\times$$ denotes the vector cross product. The <font face="monospace">atan2</font> function in most programing languages can be used to determine the appropriate 
+quadrant. N.B. The above fraction is equivalent to $$\frac{y}{x}$$ in the terminology of most <font face="monospace">atan2</font> functions.
+</p>
+</div>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\alpha'$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Angular difference between the anchored best-fit direction from the paleointensity experiment and an independent measure of the paleomagnetic direction 
+(<a href="spdweb_refs.html#kissel04"><i>Kissel and Laj</i>, 2004</a>). The independent direction can be derived from a separate demagnetization experiment or from a known 
+reference direction.</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\theta$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The angle between the applied field direction and the ChRM direction of the NRM as determined from the free-floating PCA fit to the selected demagnetization steps of the 
+paleointensity experiment.</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$DANG$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The Deviation ANGle: the angle between the free-floating best-fit direction and the direction between data center of mass [$$\bar{X_{1}}, \bar{X_{2}}, \bar{X_{3}}$$] and 
+the origin of the vector component diagram (<a href="spdweb_refs.html#tanaka03"><i>Tanaka and Kobayashi</i>, 2003</a>; <a href="spdweb_refs.html#tauxe04c"><i>Tauxe and 
+Staudigel</i>, 2004</a>).</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$NRM_{dev}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The intensity deviation of the free-floating principal component from the origin of the vector component diagram, normalized by the total NRM intensity 
+($$Y_{Int.}$$; <a href="spdweb_refs.html#tanaka03"><i>Tanaka and Kobayashi</i>, 2003</a>).
+\[
+NRM_{dev}=\frac{\sin{(DANG)}\sqrt{\bar{X_{1}}^2 + \bar{X_{2}}^2 + \bar{X_{3}}^2}}{\left|Y_{Int.}\right|}\times{100}
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\gamma$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The angle between the pTRM acquired at the last step used for the best-fit segment (i.e., $$\mathbf{TRM}_{i=end}$$) and the applied field direction ($$\mathbf{B}_{Lab}$$). 
+$$\gamma$$ can be used as a quick check to assess if a sample is strongly influenced by anisotropic TRM. See <a href="spdweb_p8.html">Section 8</a> for further information of 
+measuring and quantifying anisotropy of TRM.</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$CRM(\%)$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>To detect the potential acquisition of chemical remanent magnetization (CRM), <a href="spdweb_refs.html#coe84"><i>Coe et al.</i> (1984)</a> proposed $$CRM(\%)$$ to measure the deflection the NRM vector towards the direction 
+of $$B_{Lab}$$ as would be expected during the formation of CRM. A schematic illustration of the quantities involved in the calculation of $$CRM(\%)$$ are shown in 
+<a href="spdweb_p4.html#fig:CRM">Figure 4</a>. To determine $$CRM(\%)$$ the characteristic remanent magnetization (ChRM) direction needs to be known. This must be determined from an independent 
+demagnetization experiment.</p>
+
+<a name="fig:CRM"></a>
+<figure align="center">
+	<img src="images/CRM_diagram.png" width="382" height="311">  <!--1146x933 -->
+	<figcaption><strong>Figure 4.</strong> Illustration of an NRM vector ($$\mathbf{NRM}_i$$) being deflected from the expected ChRM direction toward the applied field direction 
+	($$\mathbf{B}_{Lab}$$) by the acquisition of CRM during laboratory heating.<figcaption>
+</figure>
+
+<p>First, the magnitude of the CRM vector is determined:
+\[
+CRM_i=\left\|\mathbf{NRM}_i\right\|\frac{\sin{(\phi_1)}}{\sin{(\phi_2)}}=y_i\frac{\sin{(\phi_1)}}{\sin{(\phi_2)}},
+\]
+where $$\left\|\mathbf{NRM}_i\right\|$$ denotes the length of the $$\mathbf{NRM}_i$$ vector, which is equivalent to $$y_i$$.</p>
+
+<p>$$CRM(\%)$$ is the maximum value of $$CRM_i$$ over the selected best-fit Arai segment, normalized by the length of the TRM portion of best-fit Arai line:
+\[
+CRM(\%)=\frac{\max{\left\{CRM_i\right\}}_{i=start, \ldots, end}}{\Delta{x'}}\times{100}.
+\]
+</p>
+
+<div align="center">
+<p class="note" align="left">
+<strong><i>Useful Note...</strong></i><br>
+In the original work by Coe $$CRM(\%)$$ was originally called "$$R$$". We have renamed this statistic to avoid confusion with the "$$R$$"'s related to Arai plot linearity and 
+line-fitting ($$R_{corr}^2$$ and $$R_{det}^2$$) and the length of the resultant vector when undertaking a Fisher analysis of paleomagnetic directions. It should be noted that 
+some older studies denote $$CRM(\%)$$ and "$$R$$".
+</p>
+</div>
+
+<p>&nbsp;</p>
+<a href= "#top">&#8593; TOP</a>
+
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>

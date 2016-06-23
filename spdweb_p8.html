@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+
+<p><a href="spdweb_p7.html" style="color:blue">[&#8592; Additivity check statistics]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593;  SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_p9.html" style="color:blue">[Non-linear TRM &#8594;]</a></p>
+
+<h2>8&nbsp;Anisotropic TRM</h2>
+<h3>8.1&nbsp;The&nbsp;basic&nbsp;procedure</h3>
+<p>Correction of paleointensity results for anisotropic TRM is based on the premise that in a weak magnetic field a TRM vector ($$\mathbf{TRM}$$) is related to the applied field vector 
+($$\mathbf{B}$$) by:
+\[
+	\mathbf{TRM}=\mathbf{\chi}_{TRM}\mathbf{B},
+\]
+where $$\mathbf{\chi}_{TRM}$$ is the TRM anisotropy tensor, which is assumed to be temperature invariant <a href="spdweb_refs.html#veitch84">(<i>Veitch et al.</i>, 1984</a>; 
+<a href="spdweb_refs.html#selkin00a"><i>Selkin et al.</i>, 2000)</a>. The anisotropy tensor can be experimentally determined by giving a specimen a full TRM or ARM in 
+6 different directions ($$\pm x$$, $$\pm y$$, $$\pm z$$).</p>
+
+<p>To correct a paleointensity estimate, a unit vector in the direction of the ancient field ($$\mathbf{\hat{B}_{Anc}}$$; the hat denotes a unit vector) must be determined. 
+Given a unit vector in the direction of the characteristic NRM direction ($$\mathbf{\hat{M}_{ChRM}}$$), $$\mathbf{\hat{B}_{Anc}}$$ can be calculated from:
+\[
+	\mathbf{\hat{B}_{Anc}}=\frac{ \mathbf{\chi}^{-1}_{TRM}\mathbf{\hat{M}_{ChRM}} } { \left| \mathbf{\chi}^{-1}_{TRM}\mathbf{\hat{M}_{ChRM}} \right| }.
+\]
+$$\mathbf{\hat{M}_{ChRM}}$$ is determined from the free-floating PCA fit to the NRM steps from the selected Arai plot segment.<br>
+The paleointensity correction factor, $$c$$, which is the ratio of a magnetization gained in the direction of $$\mathbf{\hat{B}_{Lab}}$$ to a magnetization gained in the 
+direction of $$\mathbf{\hat{B}_{Anc}}$$ can then be calculated as:
+\[
+	c=\frac{ \left| \mathbf{\chi}_{TRM}\mathbf{\hat{B}_{Lab}} \right|  } { \left| \mathbf{\chi}_{TRM}\mathbf{\hat{B}_{Anc}} \right| }.
+\]
+The anisotropy corrected paleointensity estimate is simply given by:
+\[
+B_{Anc} = c{B_{Lab}}\left|b\right|.
+\]
+</p>
+
+<div align="center">
+<p class="note" align="left">
+<strong><i>Useful Note...</i></strong><br>
+Two methods to correct for anisotropy have been outlined in the literature <a href="spdweb_refs.html#veitch84">(<i>Veitch et al.</i>, 1984</a>; 
+<a href="spdweb_refs.html#selkin00a"><i>Selkin et al.</i>, 2000)</a>. The method outlined above is that 
+derived from <a href="spdweb_refs.html#veitch84"><i>Veitch et al.</i>, (1984)</a>, but both methods yield identical paleointensity estimates. 
+The method of <a href="spdweb_refs.html#selkin00a"><i>Selkin et al.</i>, (2000)</a>, however, can have a  detrimental effect of some selection 
+statistics and the method outlined above should be the preferred approach <a href="spdweb_refs.html#paterson13">(<i>Paterson</i>, 2013)</a>.
+</p>
+</div>
+
+
+<h3>8.2&nbsp;Calculation&nbsp;of&nbsp;$$\chi{TRM}$$</h3>
+<p>The anisotropy tensor, $$\mathbf{\chi}_{TRM}$$, can be mathematically represented by a 3$$\times$$3 matrix, which has 6 independent elements.
+\[
+\mathbf{\chi}_{TRM}=
+	\begin{pmatrix}
+		s_1 & s_4 & s_6 \\
+    s_4 & s_2 & s_5 \\
+    s_6 & s_5 & s_3
+		\end{pmatrix}
+\]
+For convenience, we can define a column matrix, $$\mathbf{s}$$, which contains the 6 independent elements, $$s_j, j=1\ldots6$$.</p>
+
+<p>The TRM acquired when a specimen is placed in series of positions with respect to the applied field, can be expresses as
+\[
+\mathbf{TRM}_i=\mathbf{A}_{i,j}\mathbf{s}_j,
+\]
+where $$i$$ denotes the $$i^{th}$$ measurement position and $$\mathbf{A}$$ is know as the design matrix and depends on the experimental design 
+(i.e., the sequence of axes along which the field is applied).</p>
+
+<p>The typical 6 positions of measurement of $$\mathbf{\chi}_{TRM}$$ or $$\mathbf{\chi}_{ARM}$$ ($$\pm x$$, $$\pm y$$, $$\pm z$$) can be represented by the 
+matrix $$\mathbf{P}$$, which contains the unit vectors of the axes along which $$B_{Lab}$$ is applied.
+\[
+\mathbf{P}=
+	\begin{pmatrix}
+		P_{1,1} & P_{1,2} & P_{1,3}\\
+		P_{2,1} & P_{2,2} & P_{2,3}\\
+		\vdots	&	\vdots	& \vdots \\
+		P_{6,1} & P_{6,2} & P_{6,3}\\
+	\end{pmatrix}
+\]
+For each element $$P_{i,j}$$ of $$\mathbf{P}$$, $$i$$ denotes the $$i^{th}$$ measurement position and $$j=1\dots3$$, denotes the Cartesian coordinates of the 
+unit vector along which the remanence is acquired (i.e., $$j = 1 = x$$, $$j = 2 = y$$, $$j = 3 = z$$).
+The design matrix of such a routine is given by:
+\[
+\mathbf{A}=
+	\begin{pmatrix}
+		P_{1,1} & 0 & 0 & P_{1,2} & 0 & P_{1,3}\\ %1
+		0 & P_{1,2} & 0 & P_{1,1} & P_{1,3} & 0\\ %2
+		0 & 0 & P_{1,3} & 0 & P_{1,2} & P_{1,1}\\ %3
+		P_{2,1} & 0 & 0 & P_{2,2} & 0 & P_{2,3}\\ %4
+		0 & P_{2,2} & 0 & P_{2,1} & P_{2,3} & 0\\ %5
+		0 & 0 & P_{2,3} & 0 & P_{3,3} & P_{3,1}\\ %6
+		P_{3,1} & 0 & 0 & P_{3,2} & 0 & P_{3,3}\\ %7
+		0 & P_{3,2} & 0 & P_{3,1} & P_{3,3} & 0\\ %8
+		0 & 0 & P_{3,3} & 0 & P_{3,2} & P_{3,1}\\ %9
+		P_{4,1} & 0 & 0 & P_{4,2} & 0 & P_{4,3}\\ %10
+		0 & P_{4,2} & 0 & P_{4,1} & P_{4,3} & 0\\ %11
+		0 & 0 & P_{4,3} & 0 & P_{4,2} & P_{4,1}\\ %12
+		P_{5,1} & 0 & 0 & P_{5,2} & 0 & P_{5,3}\\ %13
+		0 & P_{5,2} & 0 & P_{5,1} & P_{5,3} & 0\\ %14
+		0 & 0 & P_{5,3} & 0 & P_{5,2} & P_{5,1}\\ %15
+		P_{6,1} & 0 & 0 & P_{6,2} & 0 & P_{6,3}\\ %16
+		0 & P_{6,2} & 0 & P_{6,1} & P_{6,3} & 0\\ %17
+		0 & 0 & P_{6,3} & 0 & P_{6,2} & P_{6,1}\\ %18
+		\end{pmatrix}.
+\]
+</p>
+
+<div align="center">
+<p class="note" align="left">
+<strong><i>Numerical Tip...</i></strong><br>
+To allow flexibility, the below pseudo-code can be used to easily generate $$\mathbf{A}$$, when $$\mathbf{P}$$ is variable.<br>
+<strong>for</strong> $$i = 1 \rightarrow 6$$ <strong>do</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;index=(3$$\times$$(i-1))+1<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index,1)=P(i,1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index,2)=P(i,2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index,3)=P(i,3)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index+1,1)=P(i,1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index+1,2)=P(i,2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index+1,3)=P(i,3)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index+2,1)=P(i,1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index+2,2)=P(i,2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A(index+2,3)=P(i,3)<br>
+<strong>end for</strong> 
+</p>
+</div>
+
+<p>The best-fit values for $$\mathbf{s}$$ for the measured data can be obtained through the linear relationship:
+\[
+\mathbf{s}=\left(\mathbf{A}^{T}\mathbf{A}\right)^{-1}\mathbf{A}^{T}\mathbf{TRM},
+\]
+where $$^{T}$$ and $$^{-1}$$ denote the matrix transpose and inverse, respectively.
+These best-fit value then be used to construct $$\mathbf{\chi}_{TRM}$$ and hence determine $$c$$.</p>
+
+<div align="center">
+<p class="note" align="left">
+<strong><i>Numerical Tip...</i></strong><br>
+Calculating the inverse of the anisotropy tensor or $$\left(\mathbf{A}^{T}\mathbf{A}\right)$$ is not strictly necessary and can be inefficient 
+and inaccurate. An alternative approach can be used if it is recognized that $$\mathbf{\chi^{-1}}_{TRM}\mathbf{\hat{M}}_{ChRM}$$ and 
+$$\left(\mathbf{A}^{T}\mathbf{A}\right)^{-1}\mathbf{A}^{T}$$ are linear problems of the form:
+\[
+	\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}.
+\]
+Many programming languages support tools that allow the solving of such linear systems without having to calculate the matrix inverse. 
+For example, the <font face="monospace">MATLAB</font> command <font face="monospace">x=A\b</font> or the <font face="monospace">Python</font> 
+command <font face="monospace">x=linalg.solve(A,b)</font> are solutions that do not need to 
+calculate the inverse of $$\mathbf{A}$$. Such approaches are numerically efficient and more stable and should be used where available.
+</p>
+</div>
+
+$$\mathbf{\chi}_{TRM}$$ is expressed in core coordinates, but much like the analysis of paleomagnetic directions, there exists an alternate coordinate system that that 
+allows $$\mathbf{\chi}_{TRM}$$ to be expressed in terms of principal components. That is,
+\[
+\mathbf{\chi}_{TRM}\mathbf{V}=\tau\mathbf{V}
+\]
+where $$\mathbf{V}$$ is a matrix that contains the three eigenvectors (principal axes) and $$\tau$$ is a diagonal matrix that contains the three eigenvalues. 
+The eigenvalues of the anisotropy tensor can then be used to characterize the anisotropy behaviour of a specimen (e.g., degree of anisotropy etc.) 
+See <a href="spdweb_refs.html#tauxe10"><i>Tauxe</i>, (2010)</a> for further details.
+
+
+<h3>8.3&nbsp;Test&nbsp;for&nbsp;alteration&nbsp;after&nbsp;measurement&nbsp;of&nbsp;$$\chi{TRM}$$</h3>
+<p><strong>Statistic: $$\delta{TRM_{Anis}}$$</strong><br>
+<i> Report to 1 d.p.</i></p>
+<p>To test for alteration during the measurement of $$\mathbf{\chi}_{TRM}$$ a repeat remagnetization step is performed to the first treatment position. 
+$$\delta{TRM_{Anis}}$$ is the difference between the intensities of the TRM acquired during first heating in position 1 ($$TRM_{P1}$$) and the second heating in 
+position 1 ($$TRM'_{P1}$$) normalized by $$TRM_{P1}$$.
+\[
+\delta{TRM_{Anis}}=\frac{\left|TRM_{P1} - TRM'_{P1}\right|}{TRM_{P1}}\times{100}
+\]
+</p>
+<p>&nbsp;</p>
+
+
+
+
+<a href= "#top"> &#8593; TOP</a>
+
+
+
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>

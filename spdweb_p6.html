@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+<p><a href="spdweb_p5.html" style="color:blue">[&#8592; pTRM check statistics]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593;  SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_p7.html" style="color:blue">[Additivity check statistics &#8594;]</a></p>
+
+
+
+<h2>6 pTRM tails check statistics</h2>
+
+<h3>6.1 pTRM tail checks</h3>
+<p>A pTRM tail check is a repeat demagnetization step to test for changes in a specimen's magnetization carried in the blocking temperature range above the temperature of 
+the check. The difference between the first NRM measurement and the pTRM tail check is calculated as the scalar intensity difference:
+\[
+\delta{tail_i}=tail\_check_i - NRM_i = tail\_check_i - y_i,
+\]
+where $$tail\_check_i$$ is the pTRM tail check to the $$i^{th}$$ temperature step. The order of the difference is such that tail checks smaller than the original NRM yield 
+negative $\delta{tail_i}$ and tail checks larger than the original NRM give positive $\delta{tail_i}$. For a pTRM tail check to be included in the analysis, $$T_i$$ must 
+be less than or equal to $$T_{max}$$.</p>
+
+<a name="fig:tails"></a>
+<figure align="center">
+	<img src="images/tail_fig.png" width="405" height="418"> <!-- 1215x1254 -->
+	<figcaption><strong>Figure 6.</strong>Schematic illustration of pTRM tail checks on an Arai plot and the quantities used to calculate pTRM tail check statistics.</figcaption>
+</figure>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$n_{Tail}$$</strong></p>
+<p>The number of pTRM tail checks conducted below the maximum temperature used for the best-fit segment on the Arai plot (i.e., the number of pTRM tail checks used to analyze the 
+best-fit segment on the Arai plot).</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$DRAT_{Tail}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Maximum absolute difference produced by a pTRM tail check, normalized by the length of the best-fit line (<a href="spdweb_refs.html#biggin07a"><i>Biggin et al.</i>, 2007</a>).
+\[
+DRAT_{Tail}=\frac{\max{\{\left| \delta{tail_i} \right|\}}_{i=1, \ldots, end}}{L}\times{100}
+\]
+</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\delta{TR}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Maximum absolute difference produced by a pTRM tail check, normalized by the NRM (obtained from the intersection of the best-fit line and the y-axis on an Arai plot; 
+<a href="spdweb_refs.html#leonhardt04a"><i>Leonhardt et al.</i>, 2004a</a>).
+\[
+\delta{TR}=\frac{\max{\{\left| \delta{tail_i} \right|\}}_{i=1, \ldots, end}}{\left|Y_{Int.}\right|}\times{100}
+\]
+</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$MD_{VDS}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Maximum absolute difference produced by a pTRM tail check, normalized by the vector difference sum of the NRM (<a href="spdweb_refs.html#tauxe04c"><i>Tauxe and Staudigel</i>, 2004</a>).
+\[
+MD_{VDS}=\frac{\max{\{\left| \delta{tail_i} \right|\}}_{i=1, \ldots, end}}{VDS}\times{100}
+\]
+</p>
+
+
+<div align="center">
+<p class="note" align="left">
+<i><strong>Useful Note...</strong></i><br>
+Some versions of <font face="monospace">PmagPy</font> and <font face="monospace">ThellierGUI</font> use a pTRM tail check statistic called  $$MD(\%)$$. 
+This is identical to $$MD_{VDS}$$, but the change in name emphasizes its calculation method.
+</p>
+</div>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\delta{t^*}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The extent of a pTRM tail after correction for angular dependence (<a href="spdweb_refs.html#leonhardt04a"><i>Leonhardt et al.</i>, 2004a</a>; 
+<a href="spdweb_refs.html#leonhardt04b">2004b</a>).</p>
+
+<p>The applied laboratory field vector ($$\mathbf{B}_{Lab}$$) is typically applied along a principle axis in the sample coordinate system (i.e., $$\pm x$$, $$\pm y$$, 
+or $$\pm z$$). Therefore, for simplicity, $$\delta{t^*}$$ should be calculated in the sample coordinate system only. <a href="spdweb_p6.html#fig:dt_star">Figure 7</a>
+ is a schematic illustration of aspects of the calculation of $$\delta{t^*}$$.</p>
+
+<a name="fig:dt_star"></a>
+<figure align="center">
+	<img src="images/dt_star.png" width="377" height="425"> <!-- 1131x1274 -->
+	<figcaption><strong>Figure 7.</strong>Schematic illustration of an NRM vector ($$\mathbf{NRM}_i$$) and a pTRM tail check vector ($$\mathbf{tail\_check}_i$$) for a sample 
+	that exhibits a pTRM tail. Modified after <a href="spdweb_refs.html#leonhardt04b"><i>Leonhardt et al.</i> (2004b)</a>.</figcaption>
+</figure>
+
+<p>Let $$N_{x,i}$$, $$N_{y,i}$$, and $$N_{z,i}$$ denote the Cartesian coordinates of the NRM vector at step $$i$$ (i.e., $$\mathbf{NRM}_i = $$ [$$N_{x,i}$$, $$N_{y,i}$$, $$N_{z,i}$$]). 
+Similarly, let $$T_{x,i}$$, $$T_{y,i}$$, and $$T_{z,i}$$ denote the Cartesian coordinates of the repeat demagnetization vector at step $$i$$ (i.e., $$\mathbf{tail\_check}_i = $$
+ [$$T_{x,i}$$, $$T_{y,i}$$, $$T_{z,i}$$]).</p>
+
+<p>Assuming that $$\mathbf{B}_{Lab}$$ is applied along the z-axis, the difference in the horizontal ($$\delta{H_i}$$) and vertical components ($$\delta{Z_i}$$) between 
+$$\mathbf{NRM}_i$$ and $$\mathbf{tail\_check}_i$$ (<a href="spdweb_p6.html#fig:dt_star">Figure 7</a>) are given by:
+\[
+\delta{H_i}=\sqrt{N_{x,i}^2 + N_{y,i}^2} - \sqrt{T_{x,i}^2 + T_{y,i}^2}
+\]
+and
+\[
+\delta{Z_i}=N_{z,i} - T_{z,i}.
+\]
+</p>
+
+<p>pTRM tails have an angular dependence and the calculation of $$\delta{t^*}$$ requires two angular differences. Let $$\Delta{\theta}_i$$ denote the angle between 
+$$\mathbf{B}_{Lab}$$ and $$\mathbf{NRM}_i$$ (see <a href="spdweb_p4.html">Section 4</a> for advice on calculating the angle between two vectors). Let $$\delta{Inc}_i$$ 
+denote the difference in inclinations between the $$\mathbf{B}_{Lab}$$ and $$\mathbf{NRM}_i$$:
+\[
+\delta{Inc_i}=Inc(\mathbf{B}_{Lab}) - Inc(\mathbf{NRM}_i)=\arctan{\left(\frac{B_{Lab,z}}{\sqrt{B_{Lab,x}^2 + B_{Lab,y}^2}}\right)} - \arctan{\left(\frac{N_{z,i}}{\sqrt{N_{x,i}^2 + N_{x,i}^2}}\right)}.
+\]
+In the ThellierTool software (v4.22 and previous) $$\mathbf{B}_{Lab}$$ is determined from each $$\mathbf{TRM}_i$$. Given that $$\mathbf{B}_{Lab}$$ is almost always known, 
+the convention of SPD is to use the known $$\mathbf{B}_{Lab}$$ and not as estimated from  $$\mathbf{TRM}_i$$, which may suffer from the effects of experimental noise.</p>
+
+<p>As will be seen below, the calculation of $$\delta{t^*}$$ requires $$\frac{1}{\tan{(\Delta{\theta}_i)}}$$. As $$\Delta{\theta}_i$$ approaches zero or 180&#176; this fraction 
+tends to infinity. To tackle this, $$\delta{t^*}$$ is calculated in a piecewise fashion that depends on upper and lower angular limits ($$Lim_{upper}$$ and $$Lim_{lower}$$, 
+respectively). Below is pseudo-code that describes the logic of the calculation procedure.</p>
+
+
+<div align="center">
+<p style="width:290px" align="left"><strong>if</strong> $$\Delta{\theta}_i < Lim_{upper}$$ <strong>and</strong> $$\Delta{\theta}_i > Lim_{lower}$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> $$\delta{Inc_i} > 0$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$t^*_i=100\times\left|b\right| \frac{ -\delta{Z_i} + \frac{\delta{H_i}}{\tan{(\Delta{\theta}_i)}} }{\left|Y_{Int.}\right|}$$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>else</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$t^*_i=100\times\left|b\right| \frac{ \delta{Z_i} - \frac{\delta{H_i}}{\tan{(\Delta{\theta}_i)}} }{\left|Y_{Int.}\right|}$$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>end if</strong><br>
+<strong>else</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> $$\Delta{\theta}_i \leq Lim_{lower}$$ <strong>then</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$t^*_i=0$$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>else if</strong> $$\Delta{\theta}_i \geq Lim_{upper}$$ <strong>then</strong><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$t^*_i=100\times\frac{-\delta{Z_i}}{\left|X_{Int.}\right|+\left|Y_{Int.}\right|}$$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>end if</strong><br>
+<strong>end if</strong><br>
+</p>
+</div>
+
+<p>In v4.22 of the ThellierTool $$Lim_{lower} = 0.175$$ ($$\approx10$$&#176;) radians and $$Lim_{upper} = 2.968$$ radians($$\approx170$$&#176;). These are adopted here.</p>
+
+<p>$$\delta{t^*}$$ is then calculated as:
+\[
+\delta{t^*}=\left\{ \begin{array}{lc}	\max{ \left\{ t^*_i\right\} }_{i=1, \ldots, end}	&	\mbox{ if } (\max{ \left\{ t^*_i\right\} }_{i=1, \ldots, end} > 0)\\
+																			0																									&	\mbox{ if } (\max{ \left\{ t^*_i\right\} }_{i=1, \ldots, end} < 0)\end{array}\right.
+\]
+Only positive values of $$t^*$$ and $$\delta{t^*}$$ can be attributed to the effects of pTRM tails, hence $$\delta{t^*}$$ is calculated as the maximum of $$t^*$$ and not the 
+maximum of $$\left|t^*\right|$$.</p>
+
+<p>It should be noted that an implicit assumption in the above calculations is that $$\mathbf{B}_{Lab}$$ is applied along the $$z$$-axis.  In situations where 
+$$\mathbf{B}_{Lab}$$ is applied along the $$x$$- or $$y$$-axes, the definition of ``horizontal'' and ``vertical'' can be redefined such that $$\mathbf{B}_{Lab}$$ is 
+applied in the ``vertical'' direction.
+For example, if $$\mathbf{B}_{Lab}$$ is along the $$x$$-axis, $$\delta{H_i}$$ and $$\delta{Z_i}$$ can be defined as:
+\[
+\delta{H_i}=\sqrt{N_{y,i}^2 + N_{z,i}^2} - \sqrt{T_{y,i}^2 + T_{z,i}^2}
+\]
+and
+\[
+\delta{Z_i}=N_{x,i} - T_{x,i},
+\]
+and
+\[
+\delta{Inc_i}=\arctan{\left(\frac{B_{Lab,x}}{\sqrt{B_{Lab,y}^2 + B_{Lab,z}^2}}\right)} - \arctan{\left(\frac{N_{x,i}}{\sqrt{N_{y,i}^2 + N_{z,i}^2}}\right)}.
+\]
+The remaining calculations can proceed as described above.</p>
+
+
+
+<p>&nbsp;</p>
+<a href= "#top">&#8593; TOP</a>
+
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>

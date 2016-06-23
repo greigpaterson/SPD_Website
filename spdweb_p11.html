@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+<p><a href="spdweb_p10.html" style="color:blue">[&#8592; The statistics of multiple paleointensity estimates]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593;  SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_refs.html" style="color:blue">[References &#8594;]</a></p>
+
+
+<h2>11 Calibration data set</h2>
+<p>To be able to test and calibrate the calculation of paleointensity data across multiple platforms and software bases, we have provided a data set of 20 paleointensity 
+specimens with which users can test their software. The data set can be downloaded <a href="DL/SPD_Test_data.zip" style="color:blue">here</a>.</p>
+
+<h3>Data sources</h3>
+<p>The 20 specimens used for testing and calibration are drawn from the compilation of data from historical location compiled by 
+<a href="spdweb_refs.html#paterson13b"><i>Paterson et al.</i> (2013)</a>. The data are from 12 studies and represent 15 localities or laboratory 
+experiments (16 unique heating events). The methods and materials used are outlined in <a href="tab:data_sources">Table 1</a>. The data from 
+<a href="spdweb_refs.html#selkin00a"><i>Selkin et al.</i> (2000)</a> and <a href="spdweb_refs.html#shaar10"><i>Shaar et al.</i> (2010)</a> are 
+corrected for the effects of non-linear TRM and/or anisotropy. The non-linear TRM coefficients (i.e., $$A_1$$ and $$A_2$$) as well as the six 
+unique elements required to construct the anisotropy tensors (i.e., $$s_{j=1\dots6}$$) are available as text files to download 
+<a href="DL/SPD_Test_data.zip" style="color:blue">here</a>.</p>
+
+<p>&nbsp;</p>
+<div style="text-align:center"><strong>Table 1.</strong> Meta-data of the 20 specimens provide to test and calibrate with SPD.</div>
+<a id="tab:data_sources"></a>
+<table border="1" bordercolor="#000000" cellpadding="3" cellspacing="0" align="center">
+<tr><td align="left"><strong>Sample name</strong></td><td width="148"><strong>Reference</strong></td><td width="118"><strong>Location</strong></td><td align="center"><strong>pTRM checks</strong></td><td align="center"><strong>pTRM tail checks</strong></td><td align="center"><strong>Additivity checks</strong></td><td align="center"><strong>Method</strong></td><td width="84"><strong>Material</strong></td><td width="165"><strong>Comment</strong></td></tr>
+<tr><td align="left">187A   </td><td width="148"><a href="spdweb_refs.html#biggin07"><i>Biggin et al.</i> (2007)</a> </td><td width="118">Mt. Etna, 1979 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">MW Coe </td><td width="84">Basaltic lava </td><td width="165">With AF cleaning </td></tr>
+<tr><td align="left">283A   </td><td width="148"><a href="spdweb_refs.html#biggin07"><i>Biggin et al.</i> (2007)</a></td><td width="118">Mt. Etna, 1950 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">MW Coe </td><td width="84">Basaltic lava </td><td width="165"></td></tr>
+<tr><td align="left">A-3-3      </td><td width="148"><a href="spdweb_refs.html#yamamoto03"><i>Yamamoto et al.</i> (2003)</a> </td><td width="118">Hawaii, 1960 </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">Coe </td><td width="84">Basaltic lava </td><td width="165"></td></tr>
+<tr><td align="left">AL2770-3b  </td><td width="148"><a href="spdweb_refs.html#bowles06"><i>Bowles et al.</i> (2006)</a> </td><td width="118">East Pacific Rise, 1991/92 </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">Coe </td><td width="84">SBG </td><td width="165"></td></tr>
+<tr><td align="left">BR06-4F    </td><td width="148"><a href="spdweb_refs.html#donadini07"><i>Donadini et al.</i> (2007)</a></td><td width="118">Helsinki, 1906 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">Brick </td><td width="165"></td></tr>
+<tr><td align="left">C-4-4L     </td><td width="148"><a href="spdweb_refs.html#yamamoto03"><i>Yamamoto et al.</i> (2003)</a></td><td width="118">Hawaii, 1960 </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">Coe </td><td width="84">Basaltic lava </td><td width="165">With low temperature demagnetization </td></tr>
+<tr><td align="left">HEL2-2d    </td><td width="148"><a href="spdweb_refs.html#donadini07"><i>Donadini et al.</i> (2007)</a></td><td width="118">Helsinki, 1906 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">Brick </td><td width="165"></td></tr>
+<tr><td align="left">KF-3-1      </td><td width="148"><a href="spdweb_refs.html#tanaka12"><i>Tanaka et al.</i> (2012)</a></td><td width="118">Krafla, 1984 </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">Coe </td><td width="84">Basaltic lava </td><td width="165"></td></tr>
+<tr><td align="left">LV6C3A     </td><td width="148"><a href="spdweb_refs.html#paterson10b"><i>Paterson et al.</i> (2010b)</a> </td><td width="118">L&#225;scar, 1993 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">Andesitic clast </td><td width="165"></td></tr>
+<tr><td align="left">m428b1     </td><td width="148"><a href="spdweb_refs.html#selkin00a"><i>Selkin et al.</i> (2000)</a></td><td width="118">Stillwater Complex </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">Coe </td><td width="84">Anorthosite </td><td width="165">Anisotropic TRM corrected </td></tr>
+<tr><td align="left">MCT        </td><td width="148"><a href="spdweb_refs.html#muxworthy98"><i>Muxworthy</i> (1998)</a></td><td width="118">N/A </td><td align="center">No </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">Synthetic magnetite </td><td width="165">Average grain size 22.5 &#956;m </td></tr>
+<tr><td align="left">MSH6E13      </td><td width="148"><a href="spdweb_refs.html#paterson10b"><i>Paterson et al.</i> (2010b)</a> </td><td width="118">Mt. St. Helens, 1980 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">Coe </td><td width="84">Dacitic clast </td><td width="165"></td></tr>
+<tr><td align="left">P1MY </td><td width="148"><a href="spdweb_refs.html#muxworthy11"><i>Muxworthy et al.</i> (2011)</a></td><td width="118">Par&#237;cutin, 1943 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">Basaltic lava </td><td width="165"></td></tr>
+<tr><td align="left">RD2358-4f  </td><td width="148"><a href="spdweb_refs.html#pick93"><i>Pick and Tauxe</i> (1993)</a></td><td width="118">East Pacific Rise, 1990 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">SBG </td><td width="165"></td></tr>
+<tr><td align="left">RS25b      </td><td width="148"><a href="spdweb_refs.html#shaar10"><i>Shaar et al.</i> (2010)</a></td><td width="118">N/A </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">IZZI </td><td width="84">Remelted copper slag </td><td width="165">Anisotropic and non-linear TRM corrected </td></tr>
+<tr><td align="left">RS26a      </td><td width="148"><a href="spdweb_refs.html#shaar10"><i>Shaar et al.</i> (2010)</a></td><td width="118">N/A </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">IZZI </td><td width="84">Remelted copper slag </td><td width="165">Anisotropic and non-linear TRM corrected </td></tr>
+<tr><td align="left">RS26e      </td><td width="148"><a href="spdweb_refs.html#shaar10"><i>Shaar et al.</i> (2010)</a></td><td width="118">N/A </td><td align="center">Yes </td><td align="center">No </td><td align="center">No </td><td align="center">IZZI </td><td width="84">Remelted copper slag </td><td width="165">Anisotropic and non-linear TRM corrected </td></tr>
+<tr><td align="left">TS01-20A-2 </td><td width="148"><a href="spdweb_refs.html#yamamoto08"><i>Yamamoto and Hoshi</i> (2008)</a> </td><td width="118">Sakurajima, 1914 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">Andesitic lava </td><td width="165"></td></tr>
+<tr><td align="left">VM1F </td><td width="148"><a href="spdweb_refs.html#muxworthy11"><i>Muxworthy et al.</i> (2011)</a></td><td width="118">Vesuvius, 1940 </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">No </td><td align="center">Coe </td><td width="84">Basaltic lava </td><td width="165"></td></tr>
+<tr><td align="left">W3   </td><td width="148"><a href="spdweb_refs.html#krasa03"><i>Krása et al.</i> (2003)</a></td><td width="118">N/A </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">Yes </td><td align="center">Coe </td><td width="84">Synthetic magnetite </td><td width="165">Average grain size 0.5 &#956;m </td></tr>
+</table>
+<p>&nbsp;</p>
+
+
+<h3>Standardized parameters</h3>
+<p>A complete table of the standard paleointensity statistics and the details of the chosen best-fits for the above 20 specimens is available 
+for download <a href="DL/SPD_Test_Data_Table.xlsx">here</a>.
+For the calculation of statistics that make a comparison with a known reference direction (e.g., $$\alpha'$$, or $$CRM(\%)$$) an arbitrary reference 
+direction is used. This direction is Dec. = 90&#176;, Inc = 45&#176;, or $$\left[0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right]$$ in Cartesian 
+coordinates. For the calculation of $$SCAT$$, $$\beta_{threshold}$$ is taken to be 0.1.</p>
+
+
+<h3>Averaging and descriptive statistics</h3>
+<p>The paleointensity estimates along with the average, standard deviation and scatter for the 20 specimens are given in <a href="tab:data_means">Table 2</a>. 
+This table is also available for download as an Excel spreadsheet <a href="DL/SPD_Test_Data_Table.xlsx">here</a>.</p>
+
+
+<p>&nbsp;</p>
+<div style="text-align:center"><strong>Table 2.</strong> Paleointensity estimates and average value with associated descriptive statistics.</div>
+<a id="tab:data_means"></a>  
+<table border="1" bordercolor="#000000" cellpadding="3" cellspacing="0"align="center">
+<tr><td align="left"><strong>Sample name</strong></td><td align="center"><strong>B<sub>Exp</sub> (&mu;T)</strong></td><td align="center"><strong>B<sub>Anc</sub> (&mu;T)</strong></td></tr>
+<tr><td align="left">187A   </td><td align="center">44.1 </td><td align="center">45.2 </td></tr>
+<tr><td align="left">283A   </td><td align="center">43.3 </td><td align="center">116.3 </td></tr>
+<tr><td align="left">A-3-3       </td><td align="center">36.2 </td><td align="center">35.6 </td></tr>
+<tr><td align="left">AL2770-3b   </td><td align="center">35.8 </td><td align="center">26.0 </td></tr>
+<tr><td align="left">BR06-4F     </td><td align="center">49.6 </td><td align="center">41.9 </td></tr>
+<tr><td align="left">C-4-4L      </td><td align="center">36.2 </td><td align="center">36.1 </td></tr>
+<tr><td align="left">HEL2-2d     </td><td align="center">49.6 </td><td align="center">49.5 </td></tr>
+<tr><td align="left">KF-3-1       </td><td align="center">52.1 </td><td align="center">44.1 </td></tr>
+<tr><td align="left">LV6C3A      </td><td align="center">24.0 </td><td align="center">23.4 </td></tr>
+<tr><td align="left">m428b1      </td><td align="center">25.0 </td><td align="center">25.1 </td></tr>
+<tr><td align="left">MCT         </td><td align="center">55.6 </td><td align="center">71.7 </td></tr>
+<tr><td align="left">MSH6E13       </td><td align="center">55.6 </td><td align="center">22.1 </td></tr>
+<tr><td align="left">P1MY  			</td><td align="center">45.0 </td><td align="center">30.1 </td></tr>
+<tr><td align="left">RD2358-4f   </td><td align="center">37.0 </td><td align="center">85.7 </td></tr>
+<tr><td align="left">RS25b       </td><td align="center">30.0 </td><td align="center">29.3 </td></tr>
+<tr><td align="left">RS26a       </td><td align="center">60.0 </td><td align="center">63.3 </td></tr>
+<tr><td align="left">RS26e       </td><td align="center">60.0 </td><td align="center">58.1 </td></tr>
+<tr><td align="left">TS01-20A-2  </td><td align="center">45.7 </td><td align="center">50.1 </td></tr>
+<tr><td align="left">VM1F        </td><td align="center">44.0 </td><td align="center">74.0 </td></tr>
+<tr><td align="left">W3          </td><td align="center">60.0 </td><td align="center">60.7 </td></tr>
+<tr><td align="left"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="left"></td><td colspan="1" align="center"><strong>N</strong></td><td align="center">20 </td></tr>
+<tr><td align="left"></td><td colspan="1" align="center"><strong>m (&mu;T)</strong></td><td align="center">49.4 </td></tr>
+<tr><td align="left"></td><td colspan="1" align="center"><strong>s (&mu;T)</strong></td><td align="center">24.2 </td></tr>
+<tr><td align="left"></td><td colspan="1" align="center"><strong>&#948;B(%)</strong></td><td align="center">48.9 </td></tr>
+<tr><td align="left"></td><td colspan="1" align="center"><strong>&#948;B<sub>N</sub>(%)</strong></td><td align="center">66.3 </td></tr>
+</table>
+<p>&nbsp;</p>
+
+<!--
+\begin{table}[htbp]
+  \centering
+  \caption{Paleointensity estimates and average value with associated descriptive statistics.}
+    \begin{tabular}{lcc}
+    \hline
+    Sample name & $B_{Exp}$ & $B_{Anc}$ \\
+    \hline
+    187A   & 44.1 & 45.2 \\
+    283A   & 43.3 & 116.3 \\
+    A-3-3       & 36.2 & 35.6 \\
+    AL2770-3b   & 35.8 & 26.0 \\
+    BR06-4F     & 49.6 & 41.9 \\
+    C-4-4L      & 36.2 & 36.1 \\
+    HEL2-2d     & 49.6 & 49.5 \\
+    KF-3-1       & 52.1 & 44.1 \\
+    LV6C3A      & 24.0 & 23.4 \\
+    m428b1      & 25.0 & 24.8 \\
+    MCT         & 55.6 & 71.7 \\
+    MSH6E13       & 55.6 & 22.1 \\
+    P1MY  			& 45.0 & 30.1 \\
+    RD2358-4f   & 37.0 & 85.7 \\
+    RS25b       & 30.0 & 29.3 \\
+    RS26a       & 60.0 & 63.3 \\
+    RS26e       & 60.0 & 56.1 \\
+    TS01-20A-2  & 45.7 & 50.1 \\
+    VM1F        & 44.0 & 74.0 \\
+    W3          & 60.0 & 60.7 \\
+                &       &  \\
+    & \multicolumn{1}{c}{$N$} 	& 20 \\
+    & \multicolumn{1}{c}{$m$} 	& 49.3 \\
+    & \multicolumn{1}{c}{$s$} 	& 24.2 \\
+    & \multicolumn{1}{c}{$\delta{B}$(\%)}	  & 49.0 \\
+    & \multicolumn{1}{c}{$\delta{B}_N$(\%)}	& 66.3 \\
+    \hline
+
+    \hline
+    \end{tabular}%
+  \label{tab:data_means}%
+\end{table}%
+-->
+
+<h3>Weighting</h3>
+<p>An example of the calculation of weighted average and standard deviation of the above described data set is given in the Excel spreadsheet 
+available for download <a href="DL/SPD_Test_Data_Table.xlsx">here</a>. In this example, the weights are taken to be $$\frac{1}{\left(\sigma_B\right)^2}$$.</p>
+<p>&nbsp;</p>
+
+
+<a href= "#top"> &#8593; TOP</a>
+
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>

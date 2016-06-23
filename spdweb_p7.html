@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+<p><a href="spdweb_p6.html" style="color:blue">[&#8592; pTRM tails check statistics]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593;  SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_p8.html" style="color:blue">[Anisotropic TRM &#8594;]</a></p>
+
+
+<h2>7 Additivity check statistics</h2>
+
+<h3>Additivity checks</h3>
+<p>An additivity check is a repeat demagnetization step to test the validity of Thellier's law of additivity (<a href="spdweb_refs.html#krasa03"><i>Krása et al.</i>, 2003</a>). 
+In the course of a paleointensity experiment, a pTRM at temperature $$T_j$$ is imparted, pTRM($$T_j$$, $$T_0$$), where $$T_0$$ is room temperature. An additivity check demagnetizes 
+pTRM($$T_j$$, $$T_0$$) by heating to $$T_i$$, where $$T_i < T_j$$. The remaining pTRM (pTRM($$T_j$$, $$T_i$$)) is subtracted from the previous pTRM acquisition step, pTRM($$T_j$$, $$T_0$$), 
+to estimate pTRM$$^*$$($$T_i$$, $$T_0$$). That is
+\[
+pTRM^*(T_i, T_0)=pTRM(T_j, T_0)-pTRM(T_j, T_i)
+\]
+where * denotes an estimated value.
+This estimated value can be compared with a previously observed value of pTRM($$T_i$$, $$T_0$$) that was measured earlier in the experiment.
+The difference between the estimated and observed pTRMs is a measure of the violation of additivity between $$T_i$$ and $$T_0$$. The additivity check difference ($$AC_{i,j}$$) is the scalar 
+intensity difference between the two pTRMs:
+\[
+AC_{i,j}=pTRM^*(T_i, T_0)-pTRM(T_i, T_0).
+\]
+For an additivity check to be included in the analysis, both $$T_i$$ and $$T_j$$ must be less than or equal to $$T_{max}$$.</p>
+
+
+<a name="fig:additivity">
+<figure align="center">
+	<img src="images/Add_fig.png" width="410" height="418"> <!-- 1231x1254 -->
+	<figcaption><strong>Figure 8.</strong> Schematic illustration of additivity checks on an Arai plot and the quantities used to calculate additivity check statistics.</figcaption>
+</figure>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$n_{Add}$$</strong></p>
+<p>The number of additivity checks used to analyze the best-fit segment on the Arai plot (i.e., the number of $$AC_{i,j}$$ with $$T_i \leq T_{max}$$ and $$T_j \leq T_{max}$$).</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\delta{AC}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The maximum absolute additivity check difference normalized by the total TRM (obtained from the intersection of the best-fit line and the x-axis on an Arai plot; 
+<a href="spdweb_refs.html#leonhardt04a"><i>Leonhardt et al.</i>, 2004a</a>).
+\[
+\delta{AC}=\frac{\max{ \left\{ \left| AC_{i,j} \right| \right\} }_{i \leq end \textbf{ and } j \leq end}}{\left|X_{Int.}\right|}\times{100}.
+\]
+</p>
+
+<p>&nbsp;</p>
+
+<a href= "#top">&#8593; TOP</a>
+
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>

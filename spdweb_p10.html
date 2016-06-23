@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+<p><a href="spdweb_p9.html" style="color:blue">[&#8592; Non-linear TRM]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593;  SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_p11.html" style="color:blue">[Calibration data set &#8594;]</a></p>
+
+
+
+<h2>10 The statistics of multiple paleointensity estimates</h2>
+<h3>Averaging and weighting</h3>
+
+<p><strong>Statistic: $$N$$</strong></p>
+The number of paleointensity estimates to be analyzed.
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$B_j$$</strong></p>
+The value of the $$j^{th}$$ paleointensity estimate, where $$j=1$$ to $$N$$.
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$m$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The arithmetic mean of the $$N$$ paleointensity estimates
+\[
+m=\frac{ \sum\limits_{j=1}^{N}{B_j} } {N}.
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$s$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+The standard deviation of the $$N$$ paleointensity estimates.
+\[
+s=\left( \frac{ \sum\limits_{j=1}^{N}{(B_j-m)^2 } }{N-1} \right)^{\frac{1}{2}}
+\]
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$m_w$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+The weighted mean of the $$N$$ paleointensity estimates.
+\[
+m_w=\frac{\sum\limits_{j=1}^{N}{W_jB_j}}{\sum\limits_{j=1}^{N}{W_j}},
+\]
+where $$W_j$$ is the weight on the $$j^{th}$$ paleointensity estimate.
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$s_w$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+The weighted standard deviation of the $$N$$ paleointensity estimates <a href="spdweb_refs.html#heckert03">(<i>Heckert and Filliben</i>, 2003)</a>.
+\[
+s_w=\left(\frac{N\sum\limits_{j=1}^{N}{W_j\left(B_j-m_w\right)^2}}{\left(N-1\right)\sum\limits_{j=1}^{N}{W_j}}\right)^{\frac{1}{2}}
+\]
+
+<div align="center">
+<p class="note" align="left">
+<i><strong>Useful Note...</strong></i><br>
+Several options are available to act as weights. Two options that have been used in the literature are the quality and weighting factors, $$q$$ and $$w$$, respectively. 
+Their use as weighting factors, however, are not appropriate. As is outlined in <a href="spdweb_p3">Section 3</a>, $$w\propto{}q$$, which itself is a function of the Arai plot 
+slope ($$\left|b\right|$$). Hence, both $$q$$ and $$w$$ are proportional to the  paleointensity estimate. If $$q$$ or $$w$$ are used as a weight ($$W_j$$) then $$W_j\propto{}B_j$$ 
+(i.e., higher paleointensity estimates will tend to have larger weights), which can bias the weighted mean to higher values. Such dependencies should be carefully 
+considered when deciding on the choice of which statistic to use for weighting.
+</p>
+</div>
+
+<h3>Measures of scatter</h3>
+<p><strong>Statistic: $$\delta{B}(\%)$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The standard deviation as a percentage of the mean value. Often referred to as the scatter.
+\[
+\delta{B}(\%)=\frac{s}{m}\times100
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\delta{B_N}(\%)$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>When dealing with small numbers of data (i.e., small $$N$$), both $$m$$ and $$s$$ are inherently uncertain and these uncertainties propagate into measures of scatter. 
+To account for this, <a href="spdweb_refs.html#paterson10c"><i>Paterson et al.</i> (2010a)</a> proposed an adjustment to $$\delta{B}(\%)$$ to determine the upper 95% confidence interval ($$\delta{B_N}(\%)$$). Using this 
+approach we can say, with 95% confidence, that the true scatter of the data is less than $$\delta{B_N}(\%)$$. This allows for a fairer comparison of data sets with different $$N$$.
+\[
+\delta{B_N} (\%)=\left|\frac{\sqrt{N}}{  t_{nc_{ \left(1-\alpha;~(N-1);~\frac{m\sqrt{N}}{s} \right) } }  }\right|\times{100},
+\]
+where $$t_{nc}$$ is the noncentral $$t$$ critical value for the $$(1-\alpha)$$ confidence level for $$(N-1)$$ degrees of freedom and with 
+noncentrality parameter $$\frac{m\sqrt{N}}{s}$$.</p>
+
+<div align="center">
+<p class="note" align="left">
+<i><strong>Numerical Tip...</strong></i><br>
+Different software packages use different conventions for the input of $$(1-\alpha)$$ into the calculation of the noncentral $$t$$ critical value. For example, the 
+<font face="monospace">MATLAB</font> command <font face="monospace">nctinv()</font> takes $$\alpha = 0.95$$, while other function may use $$\alpha = 0.05$$. For $$N-1=1$$ and a 
+noncentrality parameter of unity (1) the noncentral $$t$$ critical value at the 95% confidence level is -1.193.
+</p>
+</div>
+
+<h3>Statistical tests for scatter</h3>
+<p><strong>Statistic: $$p_{\delta_{B}}$$</strong><br>
+<i>Report to 3 d.p.</i></p>
+<p>An alternative approach is to determine the probability that the scatter (i.e., $$\delta{B} (\%)$$) is less than some critical value, $$\delta{B_{max}}$$ 
+(<a href="spdweb_refs.html#paterson10c"><i>Paterson et al.</i>, 2010a</a>). By adopting this approach, selection based on scatter can be performed as a statistical test, 
+whereby we test the null hypothesis that our measured scatter is less than or equal to $$\delta{B_{max}}$$. The probability $$p_{\delta_{B}}$$ that this is the case is given by
+\[
+p_{\delta_{B}}=F\left(\frac{\sqrt{N}}{\delta{B_{max}}};~(N-1)~;~\frac{m\sqrt{N}}{s} \right),
+\]
+where $$F()$$ is the noncentral $$t$$ cumulative distribution function and $$\delta{B_{max}}$$ is given as a fraction and not a percentage (e.g., 0.25 as opposed to 25%). 
+If $$p_{\delta_{B}} \leq 0.05$$ we cannot reject the null hypothesis that our measured scatter is less than or equal to $$\delta{B_{max}}$$ (at the 5% significance level). 
+If, however, $$p_{\delta_{B}} > 0.05$$ we can reject the null hypotheses and our measured scatter is most likely greater than $$\delta{B_{max}}$$. The two outlined approaches are 
+identical, with $$\delta{B_N} (\%)$$ being the value of $$\delta{B_{max}}$$ that yields $$p_{\delta_{B}}=0.05$$.</p>
+
+<p><strong>Statistic: $$p_{s}$$</strong><br>
+<i>Report to 3 d.p.</i></p>
+<p>Some studies prefer to select data using an absolute limit on the standard deviation ($$s_{max}$$) of an average paleointensity estimate, most notably when the estimate is low 
+and the relative scatter may therefore be high. Given that, under the assumption of normality, estimated variance follows a chi-squared distribution the probability that $$s$$ is less 
+than or equal to $$s_{max}$$ is given by
+\[
+p_s=F_{\chi^2}\left(\frac{(N-1)s_{max}^2}{s^2};~(N-1)\right),
+\]
+where $$F_{\chi^2}()$$ chi-squared cumulative distribution function with $$N-1$$ degrees of freedom. If $$p_{s} \leq 0.05$$ we cannot reject the null hypothesis that our measured 
+scatter is less than or equal to $$s_{max}$$ (at the 5% significance level). If, however, $$p_{s} > 0.05$$ we can reject the null hypotheses and our measured scatter is most likely greater 
+than $$s_{max}$$.<br>
+It should be noted that, in cases where $$\delta{B_{max}}=\frac{s_{max}}{m}$$, $$p_s$$ is always less than $$p_{\delta{B}}$$. This is due to fact that $$p_{\delta{B}}$$ accounts for sample size 
+related uncertainty in both $$m$$ and $$s$$, but $$p_s$$ accounts for sample size uncertainty in only $$s$$.</p>
+
+<p>&nbsp;</p>
+<a href= "#top"> &#8593; TOP</a>
+
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>

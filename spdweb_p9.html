@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+<p><a href="spdweb_p8.html" style="color:blue">[&#8592; Anisotropic TRM]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593; SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_p10.html" style="color:blue">[The statistics of multiple paleointensity estimates &#8594;]</a></p>
+
+<h2>9&nbsp;Non-linear TRM</h2>
+<h3>Theory and correction</h3>
+<p>An implicit assumption in paleointensity experiments is that TRM acquisition is linearly proportional to the applied field. However, both single domain 
+theory <a href="spdweb_refs.html#neel49"><i>Néel</i> (1949)</a> and experimental data <a href="spdweb_refs.html#selkin07">(<i>Selkin et al.</i>, 2007)</a> provide evidence 
+that some particles can acquire TRM in a non-linear fashion in applied fields that are typical of the geomagnetic field intensity (i.e., $$\lesssim$$ 100 $$\mu$$T).</p>
+
+<p>Single domain theory <a href="spdweb_refs.html#neel49">(<i>Néel</i>, 1949)</a> predicts that TRM is proportional the hyperbolic tangent of the applied field ($$B$$) as described by:
+\[
+TRM=M_{rs}\tanh{\left(\frac{VM_s(T_b)B}{kT_b}\right)},
+\]
+where $$M_{rs}$$ is the saturation remanent magnetization, $$V$$ is the grain volume, $$M_s(T_b)$$ is the saturation magnetization at the blocking 
+temperature ($$T_b$$), and $$k$$ is the Boltzmann constant. For weak fields the linear approximation generally holds true for most SD grains and is a 
+result of the approximation that $$\tanh(x)\approx x$$ for small $$x$$.</p>
+
+In comparison to Néel theory, <a href="spdweb_refs.html#selkin07"><i>Selkin et al.</i>, (2007)</a> proposed that non-linear TRM acquisition be approximated by:
+\[
+TRM=A_1\tanh{(A_2B)},
+\]
+where $$A_1$$ and $$A_2$$ are scaling coefficients. It can be noted that the linear approximation is valid in the limit as $$A_2$$ tends to zero and that 
+linearity of magnetization with applied field is a special case of the more general non-linear form. This simple approximation assumes that $$A_2$$ is 
+temperature invariant, which in the strictest sense is not true $$\left(A_2 \propto \frac{M_s(T_b)}{T_b}\right)$$. This approximation, however, has been 
+demonstrated to fit real data well <a href="spdweb_refs.html#selkin07">(<i>Selkin et al.</i>, 2007</a>; <a href="spdweb_refs.html#shaar10"><i>Shaar et al.</i>, 2010)</a> 
+and the assumption of a temperature invariant $$A_2$$ is equivalent to assuming that the degree of non-linearity is identical for all pTRMs and total TRMs.</p>
+
+<p>The non-linear behaviour of a specimen can be determined by imparting the specimen with TRMs acquired in a range of applied field. A best-fit hyperbolic tangent 
+model (of the form given above) can then be fitted to the data to determine the $$A_1$$ and $$A_2$$ coefficients.
+For an SD specimen in the absence of chemical alteration (i.e., the coefficients $$A_1$$ and $$A_2$$ do not change), the slope of the line ($$\left|b\right|$$) on 
+an Arai plot can be described by:
+\[
+\left|b\right|=\frac{NRM_{Anc}}{TRM_{Lab}}=\frac{\tanh{(A_2B_{Anc})}}{\tanh{(A_2B_{Lab})}},
+\]
+and $$B_{Anc}$$ is:
+\[\label{eqn:Fa_NLT}
+B_{Anc}=\frac{ \tanh^{-1}\left({\left|b\right|\tanh{(A_2B_{Lab}) } } \right)}{A_2}.
+\]
+</p>
+
+<h3>Combined anisotropic and non-linear TRM correction</h3>
+Many natural specimens, particularly archeological materials, suffer from both anisotropic and non-linear TRM and therefore must be corrected for both. This can be achieved using:
+\[
+B_{Anc}=\frac{ \tanh^{-1}\left({c\left|b\right|\tanh{(A_2B_{Lab}) } } \right)}{A_2}.
+\]
+
+<h3>Test for alteration after measurement of $$A_1$$ and $$A_2$$</h3>
+<p><strong>Statistic: $$\delta{TRM_{NLT}}$$</strong><br>
+<i>Report to 1 d.p.</i>
+<p>To test for alteration during the measurement TRM acquisition a repeat remagnetization step is performed in the first laboratory field, which is typically the same field as used for 
+the paleointensity experiment (i.e., the final TRM acquisition in $$B_{Lab}$$). $$\delta{TRM_{NLT}}$$ is the difference between the TRM acquire in first heating in $$B_{Lab}$$ 
+($$TRM_{B_{Lab}}$$) and the second heating in $$B_{Lab}$$ ($$TRM'_{B_{Lab}}$$) normalized by $$TRM_{B_{Lab}}$$.
+\[
+\delta{TRM_{NLT}}=\frac{\left|TRM_{B_{Lab}} - TRM'_{B_{Lab}}\right|}{TRM_{B_{Lab}}}\times{100}
+\]
+</p>
+<p>&nbsp;</p>
+
+
+<a href= "#top"> &#8593; TOP</a>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>

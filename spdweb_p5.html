@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Standard Paleointensity Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<!-- Load the MathJax scripts -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] }
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- Set up a CSS box for Tips and notes -->
+<style>
+p.note
+{
+background-color:lightgray;
+width:800px;
+padding:5px;
+border:0px;
+margin:20px;
+}
+</style>
+
+</head>
+
+
+<body>
+<a name = "top"> </a> 
+
+<div style="display:block; background-color:black;">
+<img src="images/SPD_Logo.jpg" width="881" height="98">
+<font face="century gothic" color="white">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" style="color:white"><strong>Home</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="downloads.html" style="color:white">Downloads</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="spdweb.html" style="color:white">SPD on the web</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<strong><a href="links.html" style="color:white">Links</strong></a></p>
+</font>
+</div>
+
+<p><a href="spdweb_p4.html" style="color:blue">[&#8592; Directional statistics]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb.html" style="color:blue">[&#8593;  SPD on the web]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="spdweb_p6.html" style="color:blue">[pTRM tails check statistics &#8594;]</a></p>
+
+
+
+<h2>5 pTRM check statistics</h2>
+
+<h3>5.1 pTRM checks</h3>
+<p>A pTRM check is a repeat TRM acquisition step to test for changes in a specimen's ability to acquire TRM at blocking temperatures below the temperature of the check. 
+ difference between a pTRM check and the original TRM is calculated as the scalar intensity difference. That is,
+\[
+\delta{pTRM_{i,j}}=pTRM\_check_{i,j} - TRM_i = pTRM\_check_{i,j} -x_i,
+\]
+where $$pTRM\_check_{i,j}$$ is the pTRM check to the $$i^{th}$$ temperature step after heating to the $$j^{th}$$ temperature step.  The order of the difference is such that 
+pTRM checks smaller than the original TRM yield negative $$\delta{pTRM_{i,j}}$$ and pTRM checks larger than the original TRM give positive $$\delta{pTRM_{i,j}}$$. For a pTRM 
+check to be included in the analysis, both $$T_i$$ and $$T_j$$ must be less than or equal to $$T_{max}$$.
+
+<a name="fig:pTRM"></a>
+<figure align="center">
+	<img src="images/pTRM_fig.png" width="405" height="418"> <!-- 1215x1254 -->
+	<figcaption><strong>Figure 5.</strong>Schematic illustration of pTRM checks on an Arai plot and the quantities used to calculate pTRM check statistics.</figcaption>
+</figure>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$n_{pTRM}$$</strong></p>
+The number of pTRM checks used to analyze the best-fit segment on the Arai plot (i.e., the number of $$pTRM_{i,j}$$ with $$T_i \leq T_{max}$$ and $$T_j \leq T_{max}$$).
+
+<p>&nbsp;</p>
+<h3>5.2 Maximum pTRM check parameters</h3>
+<p><strong>Statistic: $$check(\%)$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Maximum absolute difference produced by a pTRM check, normalized by the TRM acquired at that heating step.
+\[
+check(\%)=\max{ \left\{ \frac{\left| \delta{pTRM_{i,j}} \right| }{x_i}\times{100}\right\} }_{i \leq end \textbf{ and } j \leq end}
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\delta{CK}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Maximum absolute difference produced by a pTRM check, normalized by the total TRM (obtained from the intersection of the best-fit line and the x-axis on an Arai plot; 
+<a href="spdweb_refs.html#leonhardt04a"><i>Leonhardt et al.</i>, 2004a</a>).
+\[
+\delta{CK}=\frac{\max{ \left\{ \left| \delta{pTRM_{i,j}} \right| \right\} }_{i \leq end \textbf{ and } j \leq end}}{\left|X_{Int.}\right|}\times{100}
+\]
+</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$DRAT$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Maximum absolute difference produced by a pTRM check, normalized by the length of the best-fit line (<a href="spdweb_refs.html#selkin00b"><i>Selkin and Tauxe</i>, 2000</a>).
+\[
+DRAT=\frac{\max{\left\{\left|\delta{pTRM_{i,j}} \right| \right\}}_{i \leq end \textbf{ and } j \leq end}}{L}\times{100},
+\]
+where $$L$$ is the length of the best-fit line on the Arai plot. $$L$$ is given by:
+\[
+L=\sqrt{ (\Delta{x'})^2 + (\Delta{y'})^2 },
+\]
+where $$\Delta{x'}$$ and $$\Delta{y'}$$ are TRM and NRM lengths of the best-fit line on the Arai plot, respectively (<a href="spdweb_p3.html">Section 3</a>).</p>
+
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$maxDEV$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Maximum absolute difference produced by a pTRM check, normalized by the length of the TRM segment of the best-fit line on the Arai plot 
+(<a href="spdweb_refs.html#blanco12"><i>Blanco et al.</i>, 2012</a>).
+\[
+maxDEV=\frac{\max{\left\{\left|\delta{pTRM_{i,j}} \right| \right\}}_{i \leq end \textbf{ and } j \leq end}}{\Delta{x'}}\times{100}
+\]
+</p>
+
+
+<h3>5.3 Cumulative pTRM check parameters</h3>
+<p>Most cumulative pTRM checks can be calculated in two fashions. The first method, is the summation of the signed pTRM differences (i.e., $$\pm \delta{pTRM}$$), 
+the second is to calculate the sum of the absolute pTRM difference (i.e., $$\left|\delta{pTRM}\right|$$). The convention of the Standard Paleointensity Definition 
+is to denote the second approach with a prime ($$'$$). For example, $$CDRAT$$ is calculated by the first method and $$CDRAT'$$ by the second.</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$CDRAT$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Cumulative $$DRAT$$ (<a href="spdweb_refs.html#kissel04"><i>Kissel and Laj</i>, 2004</a>).
+\[
+CDRAT=\frac{\left|\sum\limits_{i=1}^{end}{\delta{pTRM_{i,j}}}\right|}{L}\times{100}
+\]
+
+\[
+CDRAT'=\frac{\sum\limits_{i=1}^{end}{\left|\delta{pTRM_{i,j}}\right|}}{L}\times{100}
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$DRATS$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Cumulative pTRM check difference normalized by the pTRM gained at the maximum temperature used for the best-fit on the Arai diagram 
+(<a href="spdweb_refs.html#tauxe04c"><i>Tauxe and Staudigel</i>, 2004</a>).
+\[
+DRATS=\frac{\left|\sum\limits_{i=1}^{end}{\delta{pTRM_{i,j}}}\right|}{x_{end}}\times{100}
+\]
+
+\[
+DRATS'=\frac{\sum\limits_{i=1}^{end}{\left|\delta{pTRM_{i,j}}\right|}}{x_{end}}\times{100}
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: Mean $$DRAT$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>The average difference produced by a pTRM check, normalized by the length of the best-fit line.
+\[
+\textrm{Mean }DRAT=\frac{1}{n_{pTRM}}\frac{\left|\sum\limits_{i=1}^{end}{\delta{pTRM_{i,j}}}\right|}{L}\times{100}
+\]
+
+\[
+\textrm{Mean }DRAT'=\frac{1}{n_{pTRM}}\frac{\sum\limits_{i=1}^{end}{\left|\delta{pTRM_{i,j}}\right|}}{L}\times{100}
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: Mean $$DEV$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>Mean deviation of a pTRM check (<a href="spdweb_refs.html#blanco12"><i>Blanco et al.</i>, 2012</a>).
+\[
+\textrm{Mean }DEV=\frac{1}{n_{pTRM}}\frac{\left|\sum\limits_{i=1}^{end}\delta{pTRM_{i,j}}\right|}{\Delta{x'}}\times{100}
+\]
+
+\[
+\textrm{Mean }DEV'=\frac{1}{n_{pTRM}}\frac{\sum\limits_{i=1}^{end}\left|\delta{pTRM_{i,j}}\right|}{\Delta{x'}}\times{100}.
+\]
+</p>
+
+<p>&nbsp;</p>
+<p><strong>Statistic: $$\delta{pal}$$</strong><br>
+<i>Report to 1 d.p.</i></p>
+<p>A measure of cumulative alteration determined by the difference of the alteration corrected intensity estimate (<a href="spdweb_refs.html#valet96"><i>Valet et al.</i>, 1996</a>) 
+and the uncorrected estimate, normalized by the uncorrected estimate (<a href="spdweb_refs.html#leonhardt04a"><i>Leonhardt et al.</i>, 2004a</a>).</p>
+
+<p>We first calculate the cumulative sum of the pTRM checks up to the $$i^{th}$$ step of the experiment:
+\[
+\mathbf{C}_i=\sum\limits_{l=1}^{l=i}{ \mathbf{\delta{pTRM}}_{l,j} }, ~~\textrm{for} ~i=1,\ldots, n_{max},
+\]
+where $$\mathbf{\delta{pTRM}}_{l,j}$$ is the <strong><i>vector</i></strong> difference between $$\mathbf{TRM}_l$$ and $$\mathbf{pTRM\_check}_{l,j}$$, i.e.,
+\[
+\mathbf{\delta{pTRM}}_{l,j}=\mathbf{TRM}_l - \mathbf{pTRM\_check}_{l,j}.
+\]
+<br>
+When no pTRM check is performed $$\mathbf{\delta{pTRM}}_l=[0,0,0]$$.</p>
+
+<p>The $$\mathbf{TRM}_i$$ vector is then corrected by adding the cumulative effect of the alteration, $$\mathbf{C}_i$$:
+\[
+\mathbf{TRM}_i^*=\mathbf{TRM}_i+\mathbf{C}_{i}, ~~\textrm{for} ~i=1,\ldots, n_{max}.
+\]
+<br>
+Since no pTRM check is performed at the first step:
+\[
+\mathbf{TRM}_1^*=\mathbf{TRM}_1.
+\]
+</p>
+
+<p>The corrected TRM values on the Arai plot ($$x_i^*$$) can be calculated by determining the vector lengths of $$\mathbf{TRM}_i^*$$. The corrected slope on the Arai plot ($$b^*$$) can be 
+calculated using the selected points and the standard approach outlined in <a href="spdweb_p3.html">Section 3</a>.
+$$\delta{pal}$$ is then given by:
+\[
+\delta{pal}=\left|\frac{b-b^*}{b}\right|\times100.
+\]
+</p>
+
+
+
+
+
+<p>&nbsp;</p>
+<a href= "#top">&#8593; TOP</a>
+
+
+
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9225694; 
+var sc_invisible=1; 
+var sc_security="0ed4d12d"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="free hit
+counter" href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9225694/0/0ed4d12d/1/"
+alt="free hit counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
