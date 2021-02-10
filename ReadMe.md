@@ -4,13 +4,15 @@ Obtaining reliable paleointensity estimates is an important endeavor for underst
 
 SPD is intended to be a useful reference document for the paleomagnetic community and we hope that the community will take up on SPD and contribute to its development. If readers have comments, suggestions, corrections, or criticisms, we warmly invite them to contact us as we would appreciate all input that can help to further improve our ability to consistently select reliable paleointensity data. Maintenance and updating of SPD, however, is our responsibility and we are accountable for any mistakes and omissions (particularly GAP!). The latest and legacy versions of SPD are available from the downloads page.
 
-If you do use SPD in your work, please make it clear what version was used. For example, by stating "paleointensity statistics were calculated following the Standard Paleointensity Definitions v1.1" or "paleointensity data were analyzed using software X (citing the appropriate reference), which follows the conventions laid out by the Standard Paleointensity Definitions v1.1". We would also be grateful if you cited the publication that introduced the SPD (the reference is given below).
+We are also pleased to announce that SPD is now an integral part of paleointensity.org, which is a highly flexible application to analyze paleointensity data produced by different methods and experiments. This easy to use website can handle wide range of data formats and is completely FAIR data compliant (Findable, Accessible, Interoperable, and Reusable), easily allowing your data to be shared or made available through community databases (such as MagIC). More info can be gotten from Beguin et al. (2020; G-Cubed, doi: 10.1029/2019GC008791).
+
+If you do use SPD or in your work (or software that uses SPD), please make it clear what version was used. For example, by stating "paleointensity statistics were calculated following the Standard Paleointensity Definitions v1.1" or "paleointensity data were analyzed using software X (citing the appropriate reference), which follows the conventions laid out by the Standard Paleointensity Definitions v1.1". We would also be grateful if you cited the publication that introduced the SPD (the reference is given below).
 
 Lastly, throughout our work we have benefited from the ideas and discussions from countless others. All of these have helped to shape SPD in ways both small and large. We want to thank Julie Bowles, Fabio Donadini, Roman Leonhardt, Adrian Muxworthy, Peter Selkin, Hidefumi Tanaka, and Yuhji Yamamoto for their generosity in providing data.
 
  
-Greig A. Paterson (greig.paterson "at" mail.iggcas.ac.cn) 
-Institute of Geology & Geophysics, Chinese Academy of Science, China.
+Greig A. Paterson (greig.paterson "at" liverpool.ac.uk)
+University of Liverpool, Liverpool, UK.
 
 Lisa Tauxe 
 University of California, San Diego, USA.
@@ -21,7 +23,7 @@ University of Liverpool, UK.
 Ron Shaar and Lori C. Jonestrask 
 University of California, San Diego, USA.
 
-February 24, 2014
+February 2021
 
 
 
